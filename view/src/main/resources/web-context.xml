@@ -12,6 +12,7 @@
     <!-- Enables the Spring MVC @Controller programming model -->
     <mvc:annotation-driven />
 
+    <mvc:resources mapping="/resources/**" location="/resources/mytheme" />
 
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -20,6 +21,6 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <mvc:resources mapping="/resources/**" location="/resources/mytheme" />
+
 
 </beans>

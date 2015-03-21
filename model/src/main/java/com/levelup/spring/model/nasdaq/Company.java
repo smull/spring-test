@@ -1,16 +1,17 @@
 package com.levelup.spring.model.nasdaq;
 
-import org.springframework.stereotype.Component;
+
+
 
 /**
  * Created by java on 19.03.2015.
  */
-@Component
+
 public class Company {
 
     private String name;
-    private String sellerPrice;
-    private String buyerPrice;
+
+
 
     public Company() {
     }
@@ -23,19 +24,13 @@ public class Company {
         this.name = name;
     }
 
-    public String getSellerPrice() {
-        return sellerPrice;
+    public Double getSellerPrice() {
+        return Utils.getRandom(100,300);
     }
 
-    public void setSellerPrice(String sellerPrice) {
-        this.sellerPrice = sellerPrice;
+
+    public Double getBuyerPrice() {
+        return  Utils.getRandom(100,300);
     }
 
-    public String getBuyerPrice() {
-        return buyerPrice;
-    }
-
-    public void setBuyerPrice(String buyerPrice) {
-        this.buyerPrice = buyerPrice;
-    }
 }

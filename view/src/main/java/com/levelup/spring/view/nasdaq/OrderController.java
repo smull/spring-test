@@ -18,39 +18,22 @@ import java.util.List;
  * Created by java on 19.03.2015.
  */
 @Controller
-public class OrderController  {
+public class OrderController {
 
     @Autowired
     private CompanyService companies;
 
     @RequestMapping(value = "/price", method = RequestMethod.GET)
     public String getAllCompanies(Model model){
-          //ExchangeRoom exchangeRoom = new ExchangeRoom();
-          //exchangeRoom.fillByCompanies();
-
-
-          //List<Company> companies = exchangeRoom.getCompanies();
-          model.addAttribute("companies", companies.getcompanies());
-          /*for(Company company : companies) {
-              model.addAttribute(company.getName(),company.getName());
-              model.addAttribute("sell"+company.getName(),company.getSellerPrice());
-              model.addAttribute("buy"+company.getName(),company.getBuyerPrice());
-              System.out.println(company.getBuyerPrice());
-          }*/
-
-
-//        ModelAndView result = new ModelAndView();
-//        result.addObject("userName",userName);
-//        result.setViewName("custom");
-         // model.addAttribute(, exchangeRoom);
+        model.addAttribute("companies", companies.getcompanies());
         return "order";
     }
 
     @RequestMapping(value = "/updateinfo", method = RequestMethod.GET)
     @ResponseBody
     public List<Company> getCompanyList() {
-
-        return companies.getcompanies();
+        List<Company> companyList = companies.getcompanies();
+        return companyList;
     }
 
 
